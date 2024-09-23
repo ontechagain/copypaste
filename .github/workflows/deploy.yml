@@ -28,3 +28,6 @@ jobs:
     - name: Write Firebase Config to File
       run: |
         echo -e "${{ secrets.FIREBASE_CONFIG }}" > firebase-config.json
+
+    - name: Deploy to Firebase
+      run: firebase deploy --only hosting --config firebase-config.json
