@@ -21,7 +21,10 @@ jobs:
     - name: Install Firebase CLI
       run: npm install -g firebase-tools
 
-    - name: Deploy to Firebase
+    - name: Print Firebase Config
+      run: |
+        echo "FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}"
+
+    - name: Write Firebase Config to File
       run: |
         echo -e "${{ secrets.FIREBASE_CONFIG }}" > firebase-config.json
-        firebase deploy --only hosting --config firebase-config.json
