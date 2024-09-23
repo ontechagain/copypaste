@@ -24,8 +24,3 @@ jobs:
     - name: Print Firebase Config
       run: |
         echo "FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}"
-
-    - name: Deploy to Firebase
-      run: |
-        echo -e "${{ secrets.FIREBASE_CONFIG }}" > firebase-config.json
-        firebase deploy --only hosting --config firebase-config.json
